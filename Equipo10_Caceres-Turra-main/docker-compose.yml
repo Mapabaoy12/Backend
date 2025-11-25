@@ -1,0 +1,106 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=Pollitos12!
+      - MYSQL_DATABASE=pasteles
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - pasteleria-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.role == manager
+
+  micro-core:
+    image: micro-core:latest
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Pollitos12!
+    ports:
+      - "8181:8181"
+    networks:
+      - pasteleria-network
+    depends_on:
+      - mysql
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+
+  micro-carrito:
+    image: micro-carrito:latest
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Pollitos12!
+    ports:
+      - "8180:8180"
+    networks:
+      - pasteleria-network
+    depends_on:
+      - mysql
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+
+  micro-usuarios:
+    image: micro-usuarios:latest
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Pollitos12!
+    ports:
+      - "8182:8182"
+    networks:
+      - pasteleria-network
+    depends_on:
+      - mysql
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+
+volumes:
+  mysql-data:
+
+networks:
+  pasteleria-network:
+    driver: overlay

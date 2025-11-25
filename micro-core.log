@@ -1,0 +1,31 @@
+2025-11-22T23:20:37.239-03:00  INFO 29188 --- [micro-core] [main] c.p.micro_core.MicroCoreApplication      : Starting MicroCoreApplication using Java 17.0.11 with PID 29188 (C:\Users\daisa\Downloads\Equipo10_Caceres-Turra-main (1)\Equipo10_Caceres-Turra-main\micro-core\target\classes started by daisa in C:\Users\daisa\Downloads\Equipo10_Caceres-Turra-main (1))
+2025-11-22T23:20:37.242-03:00  INFO 29188 --- [micro-core] [main] c.p.micro_core.MicroCoreApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-11-22T23:20:37.901-03:00  INFO 29188 --- [micro-core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-22T23:20:37.978-03:00  INFO 29188 --- [micro-core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 2 JPA repository interfaces.
+2025-11-22T23:20:38.491-03:00  INFO 29188 --- [micro-core] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2025-11-22T23:20:38.511-03:00  INFO 29188 --- [micro-core] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-22T23:20:38.512-03:00  INFO 29188 --- [micro-core] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-22T23:20:38.560-03:00  INFO 29188 --- [micro-core] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-22T23:20:38.560-03:00  INFO 29188 --- [micro-core] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1282 ms
+2025-11-22T23:20:38.788-03:00  INFO 29188 --- [micro-core] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-22T23:20:38.907-03:00  INFO 29188 --- [micro-core] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-22T23:20:38.941-03:00  INFO 29188 --- [micro-core] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-22T23:20:39.180-03:00  INFO 29188 --- [micro-core] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-22T23:20:39.220-03:00  INFO 29188 --- [micro-core] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-22T23:20:39.488-03:00  INFO 29188 --- [micro-core] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@770cae59
+2025-11-22T23:20:39.490-03:00  INFO 29188 --- [micro-core] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-22T23:20:39.542-03:00  WARN 29188 --- [micro-core] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-22T23:20:39.543-03:00  WARN 29188 --- [micro-core] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-22T23:20:39.560-03:00  INFO 29188 --- [micro-core] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-22T23:20:40.212-03:00  INFO 29188 --- [micro-core] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-22T23:20:40.285-03:00  INFO 29188 --- [micro-core] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-22T23:20:40.516-03:00  WARN 29188 --- [micro-core] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-22T23:20:41.014-03:00  INFO 29188 --- [micro-core] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2025-11-22T23:20:41.025-03:00  INFO 29188 --- [micro-core] [main] c.p.micro_core.MicroCoreApplication      : Started MicroCoreApplication in 4.15 seconds (process running for 4.399)
