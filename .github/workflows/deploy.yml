@@ -7,16 +7,16 @@ on:
     branches: [ "main" ]
 
 jobs:
+  # ETAPA 1: INTEGRACIÓN CONTINUA (CI) - Build & Push
   build-and-push:
     runs-on: ubuntu-latest
-
-    # --- AGREGA ESTE BLOQUE EXACTAMENTE AQUÍ ---
+    
     services:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: "Pollitos12!"  # Tu contraseña de application.properties
-          MYSQL_DATABASE: pasteles            # Tu base de datos
+          MYSQL_ROOT_PASSWORD: "Pollitos12!"
+          MYSQL_DATABASE: pasteles
         ports:
           - 3306:3306
         options: >-
@@ -24,7 +24,6 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
-    # -------------------------------------------
 
     strategy:
       matrix:
@@ -42,7 +41,6 @@ jobs:
         cache: 'maven'
 
     - name: Correr Tests con Maven
-      # Recuerda mantener la ruta corregida que vimos antes
       working-directory: ./Equipo10_Caceres-Turra-main/${{ matrix.service }}
       run: mvn test
 
@@ -58,4 +56,46 @@ jobs:
         context: ./Equipo10_Caceres-Turra-main/${{ matrix.service }}
         file: ./Equipo10_Caceres-Turra-main/${{ matrix.service }}/Dockerfile
         push: true
+        # Asegúrate que el tag coincida con lo que pongas en docker-compose
         tags: ${{ secrets.DOCKER_USERNAME }}/${{ matrix.service }}:latest
+
+  # ETAPA 2: CONFIGURACIÓN DE SERVICIOS EN LA NUBE (Requisito IE5)
+  deploy-to-cloud:
+    needs: build-and-push # Espera a que se construyan las imágenes
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # Paso A: Copiar el archivo de configuración (docker-compose.yml) al servidor
+      - name: Copiar configuración a la nube via SCP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # Copiamos solo el docker-compose que define la infraestructura
+          source: "Equipo10_Caceres-Turra-main/docker-compose.yml"
+          target: "/home/${{ secrets.SSH_USERNAME }}/deploy"
+
+      # Paso B: Conectarse y aplicar la configuración (Despliegue)
+      - name: Ejecutar configuración remota via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Entramos a la carpeta donde copiamos el archivo
+            cd /home/${{ secrets.SSH_USERNAME }}/deploy/Equipo10_Caceres-Turra-main
+            
+            # Descargamos las imágenes más recientes que subimos en el paso anterior
+            docker compose pull
+            
+            # Configuramos/Actualizamos los servicios
+            # Si usas Swarm:
+            docker stack deploy -c docker-compose.yml pasteleria
+            
+            # O si usas Docker Compose normal:
+            # docker compose up -d --force-recreate
