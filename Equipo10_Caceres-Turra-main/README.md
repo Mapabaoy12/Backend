@@ -67,3 +67,4 @@ JPA
 Spring boot
 
 shino
+skibidi
