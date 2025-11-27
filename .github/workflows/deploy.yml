@@ -25,7 +25,8 @@ jobs:
         cache: 'maven'
 
     - name: Correr Tests con Maven
-      working-directory: ./${{ matrix.service }}
+      # Agregamos la carpeta intermedia a la ruta
+      working-directory: ./Equipo10_Caceres-Turra-main/${{ matrix.service }}
       run: mvn test
 
     - name: Login en Docker Hub
@@ -37,7 +38,8 @@ jobs:
     - name: Construir y Subir Imagen Docker
       uses: docker/build-push-action@v5
       with:
-        context: ./${{ matrix.service }}
-        file: ./${{ matrix.service }}/Dockerfile
+        # Actualizamos ambas rutas aquí también
+        context: ./Equipo10_Caceres-Turra-main/${{ matrix.service }}
+        file: ./Equipo10_Caceres-Turra-main/${{ matrix.service }}/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/${{ matrix.service }}:latest
