@@ -87,13 +87,15 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            # Entramos a la carpeta donde copiamos el archivo
             cd /home/${{ secrets.SSH_USERNAME }}/deploy/Equipo10_Caceres-Turra-main
             
-            # Opción A: Usar el comando con guion (si instalaste docker-compose)
+            # Descargamos las imágenes más recientes que subimos en el paso anterior
             docker-compose pull
             
-            # Opción B: Si solo quieres desplegar (el stack suele hacer el pull solo)
-            # docker stack deploy --with-registry-auth -c docker-compose.yml pasteleria
-            
-            # Comando de despliegue (este requiere el Paso 1 hecho)
+            # Configuramos/Actualizamos los servicios
+            # Si usas Swarm:
             docker stack deploy -c docker-compose.yml pasteleria
+            
+            # O si usas Docker Compose normal:
+            # docker compose up -d --force-recreate
