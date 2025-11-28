@@ -27,7 +27,7 @@ jobs:
 
     strategy:
       matrix:
-        service: [micro-core, micro-carrito, micro-usuarios] 
+        service: [micro-core, micro-carrito, micro-usuarios, micro-gateway] 
 
     steps:
     - name: Checkout del código
