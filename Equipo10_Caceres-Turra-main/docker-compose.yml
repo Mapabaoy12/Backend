@@ -26,8 +26,8 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=Pollitos12!
-    ports:
-      - "8181:8181"
+    #ports:
+    #  - "8181:8181"
     networks:
       - pasteleria-network
     depends_on:
@@ -54,8 +54,8 @@ services:
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=Pollitos12!
       - AZURE_SB_CONNECTION_STRING=${AZURE_SB_CONNECTION_STRING}
-    ports:
-      - "8180:8180"
+    #ports:
+    #  - "8180:8180"
     networks:
       - pasteleria-network
     depends_on:
@@ -81,8 +81,8 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=Pollitos12!
-    ports:
-      - "8182:8182"
+    #ports:
+    #  - "8182:8182"
     networks:
       - pasteleria-network
     depends_on:
