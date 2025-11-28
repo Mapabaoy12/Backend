@@ -89,7 +89,7 @@ services:
     depends_on:
       - mysql
     deploy:
-      replicas: 1
+      replicas: 2
       restart_policy:
         condition: on-failure
         delay: 5s
