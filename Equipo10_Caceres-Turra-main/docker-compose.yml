@@ -21,7 +21,6 @@ services:
           - node.role == manager
 
   micro-core:
-    # CAMBIO AQUÍ:
     image: mapa127/micro-core:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
@@ -34,7 +33,7 @@ services:
     depends_on:
       - mysql
     deploy:
-      # BAJAMOS RÉPLICAS PARA EVITAR ERROR DE MEMORIA
+  
       replicas: 2
       restart_policy:
         condition: on-failure
@@ -49,7 +48,6 @@ services:
           memory: 512M
 
   micro-carrito:
-    # CAMBIO AQUÍ:
     image: mapa127/micro-carrito:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
@@ -76,7 +74,7 @@ services:
           memory: 512M
 
   micro-usuarios:
-    # CAMBIO AQUÍ:
+    
     image: mapa127/micro-usuarios:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
