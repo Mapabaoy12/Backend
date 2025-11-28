@@ -1,0 +1,72 @@
+2025-11-27T23:29:08.701-03:00  INFO 30136 --- [micro-usuarios] [main] c.p.m.MicroUsuariosApplication           : Starting MicroUsuariosApplication using Java 24.0.2 with PID 30136 (C:\Users\daisa\Downloads\Equipo10_Caceres-Turra-main (1)\Equipo10_Caceres-Turra-main\micro-usuarios\target\classes started by daisa in C:\Users\daisa\Downloads\Equipo10_Caceres-Turra-main (1)\Equipo10_Caceres-Turra-main\micro-usuarios)
+2025-11-27T23:29:08.702-03:00  INFO 30136 --- [micro-usuarios] [main] c.p.m.MicroUsuariosApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-11-27T23:29:09.121-03:00  INFO 30136 --- [micro-usuarios] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-27T23:29:09.167-03:00  INFO 30136 --- [micro-usuarios] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2025-11-27T23:29:09.495-03:00  INFO 30136 --- [micro-usuarios] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8182 (http)
+2025-11-27T23:29:09.507-03:00  INFO 30136 --- [micro-usuarios] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-27T23:29:09.507-03:00  INFO 30136 --- [micro-usuarios] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-27T23:29:09.607-03:00  INFO 30136 --- [micro-usuarios] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-27T23:29:09.607-03:00  INFO 30136 --- [micro-usuarios] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 865 ms
+2025-11-27T23:29:09.725-03:00  INFO 30136 --- [micro-usuarios] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-27T23:29:09.761-03:00  INFO 30136 --- [micro-usuarios] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-27T23:29:09.784-03:00  INFO 30136 --- [micro-usuarios] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-27T23:29:09.999-03:00  INFO 30136 --- [micro-usuarios] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-27T23:29:10.023-03:00  INFO 30136 --- [micro-usuarios] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-27T23:29:10.402-03:00  INFO 30136 --- [micro-usuarios] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fde6f05
+2025-11-27T23:29:10.404-03:00  INFO 30136 --- [micro-usuarios] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-27T23:29:10.435-03:00  WARN 30136 --- [micro-usuarios] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-27T23:29:10.436-03:00  WARN 30136 --- [micro-usuarios] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-27T23:29:10.450-03:00  INFO 30136 --- [micro-usuarios] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-27T23:29:11.038-03:00  INFO 30136 --- [micro-usuarios] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-27T23:29:11.096-03:00  INFO 30136 --- [micro-usuarios] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27T23:29:11.324-03:00  WARN 30136 --- [micro-usuarios] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-27T23:29:11.556-03:00  INFO 30136 --- [micro-usuarios] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8182 (http) with context path '/'
+2025-11-27T23:29:11.562-03:00  INFO 30136 --- [micro-usuarios] [main] c.p.m.MicroUsuariosApplication           : Started MicroUsuariosApplication in 3.186 seconds (process running for 3.423)
+2025-11-27T23:29:13.960-03:00  INFO 30136 --- [micro-usuarios] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-27T23:29:13.980-03:00  INFO 30136 --- [micro-usuarios] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-27T23:29:13.983-03:00  INFO 30136 --- [micro-usuarios] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27T23:29:13.985-03:00  INFO 30136 --- [micro-usuarios] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-27T23:29:13.992-03:00  INFO 30136 --- [micro-usuarios] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-27T23:29:45.192-03:00  INFO 13056 --- [micro-usuarios] [main] c.p.m.MicroUsuariosApplication           : Starting MicroUsuariosApplication using Java 24.0.2 with PID 13056 (C:\Users\daisa\Downloads\Equipo10_Caceres-Turra-main (1)\Equipo10_Caceres-Turra-main\micro-usuarios\target\classes started by daisa in C:\Users\daisa\Downloads\Equipo10_Caceres-Turra-main (1)\Equipo10_Caceres-Turra-main\micro-usuarios)
+2025-11-27T23:29:45.194-03:00  INFO 13056 --- [micro-usuarios] [main] c.p.m.MicroUsuariosApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-11-27T23:29:45.622-03:00  INFO 13056 --- [micro-usuarios] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-27T23:29:45.674-03:00  INFO 13056 --- [micro-usuarios] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-11-27T23:29:45.988-03:00  INFO 13056 --- [micro-usuarios] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8182 (http)
+2025-11-27T23:29:46.001-03:00  INFO 13056 --- [micro-usuarios] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-27T23:29:46.002-03:00  INFO 13056 --- [micro-usuarios] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-27T23:29:46.042-03:00  INFO 13056 --- [micro-usuarios] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-27T23:29:46.042-03:00  INFO 13056 --- [micro-usuarios] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 811 ms
+2025-11-27T23:29:46.160-03:00  INFO 13056 --- [micro-usuarios] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-27T23:29:46.195-03:00  INFO 13056 --- [micro-usuarios] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-27T23:29:46.216-03:00  INFO 13056 --- [micro-usuarios] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-27T23:29:46.421-03:00  INFO 13056 --- [micro-usuarios] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-27T23:29:46.444-03:00  INFO 13056 --- [micro-usuarios] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-27T23:29:46.746-03:00  INFO 13056 --- [micro-usuarios] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67941d
+2025-11-27T23:29:46.747-03:00  INFO 13056 --- [micro-usuarios] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-27T23:29:46.785-03:00  WARN 13056 --- [micro-usuarios] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-27T23:29:46.786-03:00  WARN 13056 --- [micro-usuarios] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-27T23:29:46.799-03:00  INFO 13056 --- [micro-usuarios] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-27T23:29:47.393-03:00  INFO 13056 --- [micro-usuarios] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-27T23:29:47.889-03:00  INFO 13056 --- [micro-usuarios] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27T23:29:48.116-03:00  WARN 13056 --- [micro-usuarios] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-27T23:29:48.348-03:00  INFO 13056 --- [micro-usuarios] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8182 (http) with context path '/'
+2025-11-27T23:29:48.354-03:00  INFO 13056 --- [micro-usuarios] [main] c.p.m.MicroUsuariosApplication           : Started MicroUsuariosApplication in 3.48 seconds (process running for 3.722)
+2025-11-27T23:31:16.628-03:00  INFO 13056 --- [micro-usuarios] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-27T23:31:16.647-03:00  INFO 13056 --- [micro-usuarios] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-27T23:31:16.649-03:00  INFO 13056 --- [micro-usuarios] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27T23:31:16.651-03:00  INFO 13056 --- [micro-usuarios] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-27T23:31:16.658-03:00  INFO 13056 --- [micro-usuarios] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

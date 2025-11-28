@@ -1,7 +1,8 @@
 package com.pasteleria.micro_carrito.service.Impl;
 
 import org.springframework.stereotype.Service;
-
+import com.azure.messaging.servicebus.*;
+import com.fasterxml.jackson.databind.ObjectMapper; 
 import com.pasteleria.micro_carrito.dto.CarritoDTO;
 import com.pasteleria.micro_carrito.dto.ItemDTO;
 import com.pasteleria.micro_carrito.entity.Carrito;
@@ -11,13 +12,36 @@ import com.pasteleria.micro_carrito.repository.ItemRepository;
 import com.pasteleria.micro_carrito.service.CarritoService;
 
 import lombok.RequiredArgsConstructor;
-
+/*ola */
 @Service
 @RequiredArgsConstructor
 public class CarritoImpl implements CarritoService {
 
         private final CarritoRepository carritoRepo;
         private final ItemRepository itemRepo;
+
+        private void enviarMensajeACola(CarritoDTO carrito) {
+                String connectionString = System.getenv("AZURE_SB_CONNECTION_STRING");
+                String queueName = "colapedidos";
+
+                try {
+                String mensajeJson = new ObjectMapper().writeValueAsString(carrito);
+
+                ServiceBusSenderClient senderClient = new ServiceBusClientBuilder()
+                        .connectionString(connectionString)
+                        .sender()
+                        .queueName(queueName)
+                        .buildClient();
+
+                senderClient.sendMessage(new ServiceBusMessage(mensajeJson));
+                System.out.println("Mensaje enviado a la cola Azure: " + carrito.getId());
+
+                senderClient.close();
+                } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println("Error enviando a la cola: " + e.getMessage());
+                }
+        }
 
         @Override
         public CarritoDTO crearCarrito(Long usuarioId) {
@@ -46,7 +70,11 @@ public class CarritoImpl implements CarritoService {
                 carrito.calcularTotal();
                 carritoRepo.save(carrito);
 
-                return mapToDTO(carrito);
+                CarritoDTO dtoRespuesta = mapToDTO(carrito);
+
+                enviarMensajeACola(dtoRespuesta);
+
+                return dtoRespuesta;
         }
 
         @Override
@@ -80,5 +108,6 @@ public class CarritoImpl implements CarritoService {
                         .total(carrito.getTotal())
                         .build();
         }
+
 
 }
