@@ -28,20 +28,23 @@ public class UsuarioController {
 
     @GetMapping("/saludo")
     public ResponseEntity<Object> obtenerSaludoBienvenida(@RequestParam(required = false) String nombre) {
-        String azureFunctionUrl = "https://funcion-pasteles-cqgrafawbuayfxeh.westus3-01.azurewebsites.net/api/SaludoBienvenida"; 
-        
-        if (nombre != null && !nombre.isEmpty()) {
-            azureFunctionUrl += "?nombre=" + nombre;
-        }
-
-        RestTemplate restTemplate = new RestTemplate();
-        try {
-            Object respuesta = restTemplate.getForObject(azureFunctionUrl, Object.class);
-            return ResponseEntity.ok(respuesta);
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body("Error al contactar con Azure Function: " + e.getMessage());
-        }
+    String azureFunctionUrl = "https://funcion-pasteles-cqgrafawbuayfxeh.westus3-01.azurewebsites.net/api/SaludoBienvenida"; 
+    
+    if (nombre != null && !nombre.isEmpty()) {
+        azureFunctionUrl += "?nombre=" + nombre;
     }
+
+    RestTemplate restTemplate = new RestTemplate();
+    try {
+        // CAMBIO AQUÍ: Usamos String.class en lugar de Object.class
+        String respuesta = restTemplate.getForObject(azureFunctionUrl, String.class);
+        
+        // ResponseEntity<Object> acepta String sin problemas
+        return ResponseEntity.ok(respuesta);
+    } catch (Exception e) {
+        return ResponseEntity.internalServerError().body("Error al contactar con Azure Function: " + e.getMessage());
+    }
+}
 
     @GetMapping
     public ResponseEntity<List<UsuarioDto>> listarUsuarios(){
