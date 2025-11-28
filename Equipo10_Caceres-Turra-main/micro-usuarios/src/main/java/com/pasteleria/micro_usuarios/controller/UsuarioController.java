@@ -31,7 +31,7 @@ public class UsuarioController {
         String azureFunctionUrl = "https://funcion-pasteles-cqgrafawbuayfxeh.westus3-01.azurewebsites.net/api/SaludoBienvenida"; 
         
         if (nombre != null && !nombre.isEmpty()) {
-            azureFunctionUrl += "&nombre=" + nombre;
+            azureFunctionUrl += "?nombre=" + nombre;
         }
 
         RestTemplate restTemplate = new RestTemplate();
