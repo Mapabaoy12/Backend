@@ -1,0 +1,26 @@
+server:
+  port: 8080 # El puerto único que abriremos al mundo
+
+spring:
+  application:
+    name: micro-gateway
+  cloud:
+    gateway:
+      routes:
+        # Ruta para Micro-Usuarios
+        - id: usuarios-route
+          uri: http://micro-usuarios:8182 # Nombre del servicio en Docker Compose
+          predicates:
+            - Path=/usuarios/**, /api/tipos-usuario/**
+
+        # Ruta para Micro-Core (Productos y Categorías)
+        - id: core-route
+          uri: http://micro-core:8181
+          predicates:
+            - Path=/productos/**, /categorias/**
+
+        # Ruta para Micro-Carrito
+        - id: carrito-route
+          uri: http://micro-carrito:8180
+          predicates:
+            - Path=/api/carrito/**

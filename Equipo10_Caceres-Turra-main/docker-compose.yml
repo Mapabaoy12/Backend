@@ -100,6 +100,16 @@ services:
         limits:
           cpus: '0.50'
           memory: 512M
+  micro-gateway:
+    image: mapa127/micro-gateway:latest
+    ports:
+      - "8080:8080" # El ÚNICO puerto abierto al exterior
+    networks:
+      - pasteleria-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
 
 volumes:
   mysql-data:
