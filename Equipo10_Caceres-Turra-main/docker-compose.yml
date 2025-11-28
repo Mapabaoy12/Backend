@@ -35,7 +35,7 @@ services:
       - mysql
     deploy:
       # BAJAMOS RÉPLICAS PARA EVITAR ERROR DE MEMORIA
-      replicas: 1
+      replicas: 2
       restart_policy:
         condition: on-failure
         delay: 5s
@@ -62,7 +62,7 @@ services:
     depends_on:
       - mysql
     deploy:
-      replicas: 1
+      replicas: 2
       restart_policy:
         condition: on-failure
         delay: 5s
