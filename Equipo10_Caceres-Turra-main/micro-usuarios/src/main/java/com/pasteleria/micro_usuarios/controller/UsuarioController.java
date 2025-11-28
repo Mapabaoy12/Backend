@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.pasteleria.micro_usuarios.dto.UsuarioDto;
 import com.pasteleria.micro_usuarios.service.UsuarioService;
@@ -23,6 +25,23 @@ import lombok.RequiredArgsConstructor;
 public class UsuarioController {
 
     private final UsuarioService usuarioServ;
+
+    @GetMapping("/saludo")
+    public ResponseEntity<Object> obtenerSaludoBienvenida(@RequestParam(required = false) String nombre) {
+        String azureFunctionUrl = "https://funcion-pasteles-cqgrafawbuayfxeh.westus3-01.azurewebsites.net/api/SaludoBienvenida"; 
+        
+        if (nombre != null && !nombre.isEmpty()) {
+            azureFunctionUrl += "&nombre=" + nombre;
+        }
+
+        RestTemplate restTemplate = new RestTemplate();
+        try {
+            Object respuesta = restTemplate.getForObject(azureFunctionUrl, Object.class);
+            return ResponseEntity.ok(respuesta);
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Error al contactar con Azure Function: " + e.getMessage());
+        }
+    }
 
     @GetMapping
     public ResponseEntity<List<UsuarioDto>> listarUsuarios(){
