@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 
 
 @RestController
-@RequestMapping("/categorias")
+@RequestMapping("/api/v1/categorias")
 @RequiredArgsConstructor
 
 public class CategoriaController {

@@ -74,3 +74,6 @@ subase beinnafaf
 ahi mi gatito miau
 joder si funciona ahora
 cors
+detalles
+
+cambios mas cambios

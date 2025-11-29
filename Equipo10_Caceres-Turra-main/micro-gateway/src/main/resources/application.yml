@@ -28,7 +28,7 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: "http://localhost:3000" # Permite a React entrar
+            allowedOrigins: "http://localhost:5173" # Permite a React entrar
             allowedMethods:
               - GET
               - POST

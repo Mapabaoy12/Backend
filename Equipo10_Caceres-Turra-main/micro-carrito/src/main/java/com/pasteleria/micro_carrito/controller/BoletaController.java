@@ -12,7 +12,7 @@ import com.pasteleria.micro_carrito.service.BoletaService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/boletas")
+@RequestMapping("/api/v1/boletas")
 @RequiredArgsConstructor
 public class BoletaController {
     private final BoletaService boletaService;

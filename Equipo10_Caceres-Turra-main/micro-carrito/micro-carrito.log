@@ -84,3 +84,32 @@
 2025-11-29T01:05:49.423-03:00  INFO 28928 --- [micro-carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-11-29T01:05:49.426-03:00  INFO 28928 --- [micro-carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-11-29T01:05:49.434-03:00  INFO 28928 --- [micro-carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-29T01:39:55.530-03:00  INFO 27000 --- [micro-carrito] [main] c.p.m.MicroCarritoApplicationTests       : Starting MicroCarritoApplicationTests using Java 24.0.2 with PID 27000 (started by daisa in C:\Users\daisa\Downloads\Equipo10_Caceres-Turra-main (1)\Equipo10_Caceres-Turra-main\micro-carrito)
+2025-11-29T01:39:55.532-03:00  INFO 27000 --- [micro-carrito] [main] c.p.m.MicroCarritoApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2025-11-29T01:39:56.247-03:00  INFO 27000 --- [micro-carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-29T01:39:56.407-03:00  INFO 27000 --- [micro-carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152 ms. Found 3 JPA repository interfaces.
+2025-11-29T01:39:56.843-03:00  INFO 27000 --- [micro-carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-29T01:39:56.890-03:00  INFO 27000 --- [micro-carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-29T01:39:56.923-03:00  INFO 27000 --- [micro-carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-29T01:39:57.243-03:00  INFO 27000 --- [micro-carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-29T01:39:57.267-03:00  INFO 27000 --- [micro-carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-29T01:39:57.545-03:00  INFO 27000 --- [micro-carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@210c1b9d
+2025-11-29T01:39:57.546-03:00  INFO 27000 --- [micro-carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-29T01:39:57.585-03:00  WARN 27000 --- [micro-carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-29T01:39:57.586-03:00  WARN 27000 --- [micro-carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-29T01:39:57.604-03:00  INFO 27000 --- [micro-carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-29T01:39:58.363-03:00  INFO 27000 --- [micro-carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-29T01:39:58.426-03:00  INFO 27000 --- [micro-carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T01:39:58.921-03:00  WARN 27000 --- [micro-carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-29T01:39:58.960-03:00  INFO 27000 --- [micro-carrito] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-29T01:39:59.478-03:00  INFO 27000 --- [micro-carrito] [main] c.p.m.MicroCarritoApplicationTests       : Started MicroCarritoApplicationTests in 4.224 seconds (process running for 5.053)
+2025-11-29T01:39:59.838-03:00  INFO 27000 --- [micro-carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T01:39:59.841-03:00  INFO 27000 --- [micro-carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-29T01:39:59.850-03:00  INFO 27000 --- [micro-carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

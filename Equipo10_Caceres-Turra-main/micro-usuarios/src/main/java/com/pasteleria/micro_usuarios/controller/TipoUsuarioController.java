@@ -16,7 +16,7 @@ import com.pasteleria.micro_usuarios.dto.TipoUsuarioDTO;
 import com.pasteleria.micro_usuarios.service.TipoUsuarioService;
 
 @RestController
-@RequestMapping("/api/tipos-usuario")
+@RequestMapping("/api/v1/tipos-usuario")
 public class TipoUsuarioController {
 
     private final TipoUsuarioService tipoUsuarioService;
