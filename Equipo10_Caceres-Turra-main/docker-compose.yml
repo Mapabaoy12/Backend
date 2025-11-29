@@ -21,6 +21,7 @@ services:
           - node.role == manager
 
   micro-core:
+    build: ./micro-core
     image: mapa127/micro-core:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
@@ -48,6 +49,7 @@ services:
           memory: 512M
 
   micro-carrito:
+    build: ./micro-carrito
     image: mapa127/micro-carrito:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
@@ -75,7 +77,7 @@ services:
           memory: 512M
 
   micro-usuarios:
-    
+    build: ./micro-usuarios
     image: mapa127/micro-usuarios:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/pasteles
@@ -101,6 +103,7 @@ services:
           cpus: '0.50'
           memory: 512M
   micro-gateway:
+    build: ./micro-gateway
     image: mapa127/micro-gateway:latest
     ports:
       - "8080:8080" 
