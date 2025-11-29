@@ -18,7 +18,7 @@ import com.pasteleria.micro_core.service.ProductoService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/productos")
+@RequestMapping("/api/v1/productos")
 @RequiredArgsConstructor
 public class ProductoController {
 

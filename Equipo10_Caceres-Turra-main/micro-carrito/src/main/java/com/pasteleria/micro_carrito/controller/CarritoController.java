@@ -17,7 +17,7 @@ import com.pasteleria.micro_carrito.service.CarritoService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/carrito")
+@RequestMapping("/api/v1/carrito")
 @RequiredArgsConstructor
 public class CarritoController {
 
