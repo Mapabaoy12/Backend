@@ -72,3 +72,5 @@ oaaaaaaaa
 tasubioolaafafaf
 subase beinnafaf
 ahi mi gatito miau
+joder si funciona ahora
+cors
