@@ -103,7 +103,7 @@ services:
   micro-gateway:
     image: mapa127/micro-gateway:latest
     ports:
-      - "8080:8080" # El ÚNICO puerto abierto al exterior
+      - "8080:8080" 
     networks:
       - pasteleria-network
     deploy:

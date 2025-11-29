@@ -86,7 +86,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # 1. ENVIAMOS EL SECRETO COMO VARIABLE DE ENTORNO
           envs: AZURE_SB_CONNECTION_STRING 
           script: |
             # 2. EXPORTAMOS LA VARIABLE EN EL SERVIDOR
@@ -95,8 +94,7 @@ jobs:
             cd /home/${{ secrets.SSH_USERNAME }}/deploy/Equipo10_Caceres-Turra-main
             docker-compose pull
             
-            # 3. DESPLEGAMOS (Docker leerá la variable exportada)
+            # 3. DESPLEGAMOS 
             docker stack deploy -c docker-compose.yml pasteleria
         env:
-            # 4. LE DECIMOS A GITHUB QUE PASE EL SECRETO AL ACTION
             AZURE_SB_CONNECTION_STRING: ${{ secrets.AZURE_SB_CONNECTION_STRING }}

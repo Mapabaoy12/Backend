@@ -11,7 +11,7 @@ import com.pasteleria.micro_usuarios.entity.UsuarioEntity;
 import com.pasteleria.micro_usuarios.repository.TipoUsuarioRepository;
 import com.pasteleria.micro_usuarios.repository.UsuarioRepository;
 import com.pasteleria.micro_usuarios.service.UsuarioService;
-
+import org.springframework.security.crypto.password.PasswordEncoder; 
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -20,6 +20,8 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     private final UsuarioRepository usuarioRepo;
     private final TipoUsuarioRepository tipoUsuarioRepo;
+
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public List<UsuarioDto> listarUsuarios() {
@@ -44,7 +46,7 @@ public class UsuarioServiceImpl implements UsuarioService{
                 .nombre(usuarioDto.getNombre())
                 .apellido(usuarioDto.getApellido())
                 .email(usuarioDto.getEmail())
-                .contrasenia("hola") // temporal
+                .contrasenia(passwordEncoder.encode(usuarioDto.getContrasenia())) 
                 .tipoUsuario(tipo)
                 .build();
         return convertirADTO(usuarioRepo.save(usuario));

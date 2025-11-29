@@ -36,10 +36,8 @@ public class UsuarioController {
 
     RestTemplate restTemplate = new RestTemplate();
     try {
-        // CAMBIO AQUÍ: Usamos String.class en lugar de Object.class
         String respuesta = restTemplate.getForObject(azureFunctionUrl, String.class);
         
-        // ResponseEntity<Object> acepta String sin problemas
         return ResponseEntity.ok(respuesta);
     } catch (Exception e) {
         return ResponseEntity.internalServerError().body("Error al contactar con Azure Function: " + e.getMessage());
