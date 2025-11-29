@@ -11,19 +11,19 @@ spring:
         - id: usuarios-route
           uri: http://micro-usuarios:8182 # Nombre del servicio en Docker Compose
           predicates:
-            - Path=/api/v1/usuarios/**, /api/tipos-usuario/**
+            - Path=/api/v1/usuarios/**, /api/v1/tipos-usuario/**, /auth/**
 
         # Ruta para Micro-Core (Productos y Categorías)
         - id: core-route
           uri: http://micro-core:8181
           predicates:
-            - Path=/api/v1/productos/**, /categorias/**
+            - Path=/api/v1/productos/**, /api/v1/categorias/**
 
         # Ruta para Micro-Carrito
         - id: carrito-route
           uri: http://micro-carrito:8180
           predicates:
-            - Path=/api/v1/carrito/**
+            - Path=/api/v1/carrito/**, /api/v1/boletas/**
 
       globalcors:
         cors-configurations:
