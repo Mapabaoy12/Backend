@@ -26,11 +26,12 @@ public class AuthController {
     @PostMapping("/login")
     public String getToken(@RequestBody AuthRequestDto authRequest){
         Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
-    if (authenticate.isAuthenticated()){
-        return jwtService.generateToken(authRequest.getEmail());
-    } else {
-        throw new RuntimeException("Acceso invalido");
-    }
+        if (authenticate.isAuthenticated()){
+        String role = authenticate.getAuthorities().stream().findFirst().get().getAuthority();
+        return jwtService.generateToken(authRequest.getEmail(), role); 
+}       else {
+            throw new RuntimeException("Acceso invalido");
+        }
     }
     
 }

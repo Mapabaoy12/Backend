@@ -16,10 +16,11 @@ public class JwtService {
 
     public static final String SECRET_STRING = "LamejorUMAMUSUMEESGOLDSHIPHELLYEACOREYEYEYEYEYEYE";
 
-    public String generateToken(String userName) {
-        Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, userName);
-    }
+    public String generateToken(String userName, String role) { // <--- Agrega parámetro role
+    Map<String, Object> claims = new HashMap<>();
+    claims.put("role", role); // <--- Agrega el rol a los claims
+    return createToken(claims, userName);
+}
 
     private String createToken(Map<String, Object> claims, String userName){
         return Jwts.builder()
