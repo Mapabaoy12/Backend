@@ -1,4 +1,4 @@
-package com.config;
+package com.pasteleria.micro_usuarios.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
