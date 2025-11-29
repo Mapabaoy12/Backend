@@ -24,14 +24,22 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
 
     @PostMapping("/login")
-    public String getToken(@RequestBody AuthRequestDto authRequest){
-        Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
-        if (authenticate.isAuthenticated()){
-        String role = authenticate.getAuthorities().stream().findFirst().get().getAuthority();
-        return jwtService.generateToken(authRequest.getEmail(), role); 
-}       else {
+public String getToken(@RequestBody AuthRequestDto authRequest){
+    Authentication authenticate = authenticationManager.authenticate(
+        new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword())
+    );
+    
+    if (authenticate.isAuthenticated()){
+        // Obtenemos el rol del usuario autenticado (gracias a CustomUserDetails)
+        String role = authenticate.getAuthorities().stream()
+                        .findFirst()
+                        .orElseThrow(() -> new RuntimeException("Usuario sin rol"))
+                        .getAuthority();
+                        
+        // Pasamos el rol al generador de tokens
+        return jwtService.generateToken(authRequest.getEmail(), role);
+        } else {
             throw new RuntimeException("Acceso invalido");
         }
     }
-    
 }
