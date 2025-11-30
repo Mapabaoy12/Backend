@@ -76,4 +76,4 @@ joder si funciona ahora
 cors
 detalles
 
-cambios mas cambiossera verdad
+cambios mas cambiossera verdadmishh
