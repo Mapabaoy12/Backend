@@ -2,23 +2,29 @@ package com.pasteleria.micro_usuarios.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors. CorsConfiguration;
-import org.springframework. web.cors. UrlBasedCorsConfigurationSource;
-import org.springframework. web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig {
-    
+
     @Bean
-    public CorsFilter corsFilter() {
-        CorsConfiguration config = new CorsConfiguration();
-        config. setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:5173"); // Puerto de Vite
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*");
-        
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);
-        return new CorsFilter(source);
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**") // Aplica a todos los endpoints
+                        .allowedOrigins(
+                                "http://localhost:5173",   // acceso a vite
+                                "http://localhost:3000",   // (opcional)
+                                "https://tu-frontend.com"  // Producción si es que lo subes
+                        )
+                        .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .exposedHeaders("Location") // (opcional) si devuelves Location u otros
+                        .allowCredentials(false)      // Si usas cookies o auth con fetch/axios { withCredentials: true } si no false como acá
+                        .maxAge(3600);               //gestiona el tiempo en caché
+            }
+        };
     }
 }

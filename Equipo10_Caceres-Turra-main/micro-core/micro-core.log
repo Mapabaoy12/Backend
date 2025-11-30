@@ -27,3 +27,32 @@
 2025-11-30T00:16:33.069-03:00  INFO 27076 --- [micro-core] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-11-30T00:16:33.072-03:00  INFO 27076 --- [micro-core] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-11-30T00:16:33.080-03:00  INFO 27076 --- [micro-core] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-30T02:07:22.819-03:00  INFO 2728 --- [micro-core] [main] c.p.m.MicroCoreApplicationTests          : Starting MicroCoreApplicationTests using Java 24.0.2 with PID 2728 (started by daisa in C:\Users\daisa\Downloads\Equipo10_Caceres-Turra-main (1)\Equipo10_Caceres-Turra-main\micro-core)
+2025-11-30T02:07:22.821-03:00  INFO 2728 --- [micro-core] [main] c.p.m.MicroCoreApplicationTests          : No active profile set, falling back to 1 default profile: "default"
+2025-11-30T02:07:23.473-03:00  INFO 2728 --- [micro-core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-30T02:07:23.529-03:00  INFO 2728 --- [micro-core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2025-11-30T02:07:23.981-03:00  INFO 2728 --- [micro-core] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-30T02:07:24.038-03:00  INFO 2728 --- [micro-core] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-30T02:07:24.082-03:00  INFO 2728 --- [micro-core] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-30T02:07:24.449-03:00  INFO 2728 --- [micro-core] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-30T02:07:24.490-03:00  INFO 2728 --- [micro-core] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-30T02:07:24.781-03:00  INFO 2728 --- [micro-core] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2558f65c
+2025-11-30T02:07:24.783-03:00  INFO 2728 --- [micro-core] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-30T02:07:24.824-03:00  WARN 2728 --- [micro-core] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-30T02:07:24.825-03:00  WARN 2728 --- [micro-core] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-30T02:07:24.842-03:00  INFO 2728 --- [micro-core] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-30T02:07:25.574-03:00  INFO 2728 --- [micro-core] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-30T02:07:25.639-03:00  INFO 2728 --- [micro-core] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-30T02:07:26.159-03:00  WARN 2728 --- [micro-core] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-30T02:07:26.205-03:00  INFO 2728 --- [micro-core] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-30T02:07:26.641-03:00  INFO 2728 --- [micro-core] [main] c.p.m.MicroCoreApplicationTests          : Started MicroCoreApplicationTests in 4.108 seconds (process running for 4.933)
+2025-11-30T02:07:27.015-03:00  INFO 2728 --- [micro-core] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-30T02:07:27.017-03:00  INFO 2728 --- [micro-core] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-30T02:07:27.024-03:00  INFO 2728 --- [micro-core] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
