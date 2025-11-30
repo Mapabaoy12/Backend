@@ -114,16 +114,17 @@ services:
       restart_policy:
         condition: on-failure
   frontend:
-    build:
-      context: C:\Users\daisa\PasteleriaMilSabores\PasteleriaReact  # Ajusta la ruta
-      dockerfile: Dockerfile
+    image: mapa127/pasteleria-frontend:latest
     ports:
       - "3000:80"
-    environment:
-      - VITE_API_URL=http://micro-gateway:8080
+    networks:
+      - pasteleria-network
     depends_on:
       - micro-gateway
-
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
 volumes:
   mysql-data:
 
