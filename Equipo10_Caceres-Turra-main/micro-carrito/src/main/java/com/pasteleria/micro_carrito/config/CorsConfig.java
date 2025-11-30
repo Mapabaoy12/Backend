@@ -20,7 +20,7 @@ public class CorsConfig {
                         .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .exposedHeaders("Location") // (opcional) si devuelves Location u otros
-                        .allowCredentials(false)      // Si usas cookies o auth con fetch/axios { withCredentials: true } si no false como acá
+                        .allowCredentials(true)      // Si usas cookies o auth con fetch/axios { withCredentials: true } si no false como acá
                         .maxAge(3600);               //gestiona el tiempo en caché
             }
         };

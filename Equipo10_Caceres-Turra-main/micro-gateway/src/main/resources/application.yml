@@ -1,19 +1,30 @@
 server:
-  port: 8080 # El puerto único que abriremos al mundo
+  port: 8080
 
 spring:
   application:
     name: micro-gateway
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:5173"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
       routes:
         # Ruta para Micro-Usuarios
         - id: usuarios-route
-          uri: http://micro-usuarios:8182 # Nombre del servicio en Docker Compose
+          uri: http://micro-usuarios:8182
           predicates:
             - Path=/api/v1/usuarios/**, /api/v1/tipos-usuario/**, /auth/**
 
-        # Ruta para Micro-Core (Productos y Categorías)
+        # Ruta para Micro-Core
         - id: core-route
           uri: http://micro-core:8181
           predicates:
@@ -24,15 +35,3 @@ spring:
           uri: http://micro-carrito:8180
           predicates:
             - Path=/api/v1/carrito/**, /api/v1/boletas/**
-
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "http://localhost:5173" # Permite a React entrar
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - OPTIONS
-            allowedHeaders: "*"
